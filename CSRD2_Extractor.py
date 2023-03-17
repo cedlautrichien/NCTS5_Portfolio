@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
-f = open("C:/Users/Dagmar/Documents/NCTS_Data/output.txt", "w")
-fichier = "C:/Users/Dagmar/Documents/NCTS_Data/XML/simple.xml"
+f = open("C:/Users/Tester/Documents/NCTS_Data/output.txt", "w")
+fichier = "C:/Users/Tester/Documents/NCTS_Data/XML/simple.xml"
 
 tree = ET.parse(fichier)
 
