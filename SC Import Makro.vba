@@ -3,7 +3,7 @@ Sub Self_Certif()
 Dim strFile As String
 Dim varShow
 Dim Row As Integer
-Row = 148
+Row = 2
     
 On Error GoTo Fehlermeldung
 Do While Row <= 151
@@ -17,7 +17,7 @@ Print #2, vbTab & "<title xmlns=""http://purl.org/dc/elements/1.1/"">" & "CTP-" 
 Print #2, vbTab & "<!--Testfallbeschreibung-->"
 Print #2, vbTab & "<state xmlns=""http://jazz.net/xmlns/alm/v0.1/"">com.ibm.rqm.planning.common.new</state>"
 Print #2, vbTab & "<!--Testfallersteller-->"
-Print #2, vbTab & "<creator xmlns=""http://purl.org/dc/elements/1.1/"">Monnier C" & Chr(233) & "dric</creator>"
+Print #2, vbTab & "<creator xmlns=""http://purl.org/dc/elements/1.1/"">Tester</creator>"
 Print #2, vbTab & "<!--Zusammenfassungsabschnitt-->"
 Print #2, vbTab & "<category term=""Bereich"" value=""UZK""/>"
 Print #2, vbTab & "<category term=""Projekt"" value=""NCTS-P5""/>"
@@ -28,7 +28,6 @@ Print #2, vbTab & "<com.ibm.rqm.planning.editor.section.testCasePreCondition>" &
 Print #2, vbTab & "<!--Testfalldesignabschnitt-->"
 Print #2, vbTab & "<com.ibm.rqm.planning.editor.section.testCaseDesign>" & "Nachrichtenverkehr: " & Sheets("Tabelle1").Cells(Row, 17) & "</com.ibm.rqm.planning.editor.section.testCaseDesign>"
 Print #2, "</testcase>"
-'** XML-Datei schließen
 Close #2
 
 Row = Row + 1
