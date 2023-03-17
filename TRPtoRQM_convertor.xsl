@@ -30,7 +30,7 @@
 		</description>		
 		<state xmlns="http://jazz.net/xmlns/alm/v0.1/">com.ibm.rqm.planning.common.new</state>
 		<xsl:comment>Testfallersteller</xsl:comment>
-		<creator xmlns="http://purl.org/dc/elements/1.1/">Monnier Cédric</creator>
+		<creator xmlns="http://purl.org/dc/elements/1.1/">Tester</creator>
 		<xsl:comment>Zusammenfassungsabschnitt</xsl:comment>		
 		<category term="Bereich" value="UZK"/>
 		<category term="Projekt" value="NCTS-P5"/>
