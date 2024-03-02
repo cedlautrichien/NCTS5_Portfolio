@@ -1,14 +1,10 @@
 import os, re, random, datetime
-
 # change folder name here
 my_dir='C:\\git\\wbtests\\Testnachrichten\\WorkingCopy\\'
 # message types
 list=['CC015C','CC013C','CC170C','CC014C','CC141C','CC007C','CC044C']
 
-def replaceXML(i,o):
-    replace_what = i
-    replace_with = o
-
+def replaceXML(replace_what,replace_with):  
     # loop through all files in directory
     for fn in os.listdir(my_dir):
         #print(fn)
@@ -26,19 +22,17 @@ def replaceXML(i,o):
 
 a1=' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
 a2=''
-
 replaceXML(a1,a2)
 
 for msg in list:
-    icref=random.randrange(100000000000,999999999999)
+    icref=str(random.randrange(100000000000,999999999999))
     now=datetime.datetime.now()
     date_string=now.strftime("%Y%m%d%H%M%S")
-    PrepDT=int(date_string)
+    prepdt=str(int(date_string))
     b1='<ns2:'+msg+' xmlns:ns2="http://ncts.dgtaxud.ec" xmlns:ns3="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">'
-    b2='<ns2:Msg xmlns:ns2="http://brz.gv.at/ezoll/V01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n<ns2:MsgSdr>swp.transit.agent</ns2:MsgSdr>\n<ns2:MsgRcp>NTA.AT</ns2:MsgRcp>\n<ns2:'+PrepDT+'</ns2:PrepDT>\n<ns2:ICRef>'+icref+'</ns2:ICRef>\n<ns2:Appl>acc</ns2:Appl>\n<ns2:Test>1</ns2:Test>\n<ns2:MsgTyp>'+msg+'</ns2:MsgTyp>\n<ns4:'+msg+' xmlns:ns4="http://ncts.dgtaxud.ec" xmlns:ns3="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">'
+    b2='<ns2:Msg xmlns:ns2="http://brz.gv.at/ezoll/V01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n<ns2:MsgSdr>swp.transit.agent</ns2:MsgSdr>\n<ns2:MsgRcp>NTA.AT</ns2:MsgRcp>\n<ns2:PrepDT>'+prepdt+'</ns2:PrepDT>\n<ns2:ICRef>'+icref+'</ns2:ICRef>\n<ns2:Appl>acc</ns2:Appl>\n<ns2:Test>1</ns2:Test>\n<ns2:MsgTyp>'+msg+'</ns2:MsgTyp>\n<ns4:'+msg+' xmlns:ns4="http://ncts.dgtaxud.ec" xmlns:ns3="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">'
     c1='</ns2:'+msg+'>'
     c2='</ns4:'+msg+'>\n</ns2:Msg>'
     
     replaceXML(b1,b2)
     replaceXML(c1,c2)
-
